@@ -1,0 +1,9 @@
+import React from 'react';
+
+const Article = () => {
+  <div>
+    Article
+  </div>
+}
+
+export Default Article
