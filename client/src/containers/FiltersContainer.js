@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class ArticlesContainer extends Component {
+class FiltersContainer extends Component {
   render() {
     return(
       <div>
-        Articles Here!
+        Filters Here!
       </div>
     )
   }
 }
 
-export default ArticlesContainer
+export default FiltersContainer

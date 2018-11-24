@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import './containers/ArticlesContainer.js'
-import './containers/FilterContainer.js'
+import ArticlesContainer from './containers/ArticlesContainer'
+import FiltersContainer from './containers/FiltersContainer'
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>NewsFeedr</h1>
-          <FilterContainer />
+          <FiltersContainer />
           <ArticlesContainer />
         </header>
       </div>
