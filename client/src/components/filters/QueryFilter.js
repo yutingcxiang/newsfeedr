@@ -1,9 +1,11 @@
 import React from 'react';
 
 const QueryFilter = () => {
-  <div>
-    QueryFilter
-  </div>
+  return(
+    <div>
+      QueryFilter
+    </div>  
+  )
 }
 
 export default QueryFilter
