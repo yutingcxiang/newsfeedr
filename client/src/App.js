@@ -9,9 +9,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>NewsFeedr</h1>
-          <FiltersContainer />
-          <ArticlesContainer />
         </header>
+        <div>
+          <FiltersContainer />
+        </div>
+        <div>
+          <ArticlesContainer />
+        </div>
       </div>
     );
   }
