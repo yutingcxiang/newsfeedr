@@ -1,9 +1,13 @@
 import React from 'react';
+import ArticleCard from './ArticleCard'
 
 const ArticleList = () => {
-  <div>
+  return(
+    <div>
     ArticleList
-  </div>
+    <ArticleCard />
+    </div>
+  )
 }
 
 export default ArticleList

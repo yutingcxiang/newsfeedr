@@ -1,9 +1,13 @@
 import React from 'react';
+import Article from './Article'
 
 const ArticleCard = () => {
-  <div>
-    ArticleCard
-  </div>
+  return(
+    <div>
+      ArticleCard
+      <Article />
+    </div>
+  )
 }
 
 export default ArticleCard
