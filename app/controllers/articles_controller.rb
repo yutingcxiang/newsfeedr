@@ -1,22 +1,26 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.all
-    render json: @articles, status: 200
-  end
 
-  def top_headlines
+  #Default page set to show top 20 news articles from the US.
+  def top_headlines(country="us")
     response = Faraday.get 'https://newsapi.org/v2/top-headlines?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
       req.params['country'] = 'us'
     end
-    @articles = JSON.parse(response.body)
-    render json: @articles, status: 200
+    @top_headlines = JSON.parse(response.body)
+    render json: @top_headlines, status: 200
   end
 
-  def all_news
+
+  def search_all_news(query="technology")
+    response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
+      req.params['apiKey'] = ENV['API_KEY']
+      req.params['q'] = query
+    end
+    @query_articles = JSON.parse(response.body)
+    render json: @query_articles, status: 200
   end
 
-  def news_sources
+  def search_news_sources
   end
 
 end
