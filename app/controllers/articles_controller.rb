@@ -9,9 +9,4 @@ class ArticlesController < ApplicationController
     render json: @article, status: 200
   end
 
-  private
-
-  def article_params
-    params.require(:article).permit(:source => [:name], :title, :author, :description, :url, :urlToImage, :publishedAt, :content)
-  end
 end

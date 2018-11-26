@@ -18,7 +18,7 @@ gem 'puma', '~> 3.11'
 gem 'dotenv-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'faraday'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'foreman', '~> 0.82.0'

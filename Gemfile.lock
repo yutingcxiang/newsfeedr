@@ -54,6 +54,8 @@ GEM
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
+    faraday (0.15.3)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     foreman (0.82.0)
       thor (~> 0.19.1)
@@ -78,6 +80,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     msgpack (1.2.4)
+    multipart-post (2.0.0)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -142,6 +145,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   dotenv-rails
+  faraday
   foreman (~> 0.82.0)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)

@@ -4,7 +4,7 @@ const QueryFilter = () => {
   return(
     <div>
       QueryFilter
-    </div>  
+    </div>
   )
 }
 
