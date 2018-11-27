@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from './Article'
 
-const ArticleCard = () => {
+const ArticleCard = props => {
   return(
     <div>
       ArticleCard

@@ -20,7 +20,7 @@ class App extends Component {
 
         <Navbar />
         <FiltersContainer />
-        <ArticlesContainer articles={this.props.articles}/>
+        <ArticlesContainer articles={this.props.articles.articles}/>
 
         <footer className="App-footer">
           <p>© Newsfeedr - Powered by News API</p>
@@ -31,7 +31,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles}
+  return {articles: state.articles.articles}
 }
 
 const mapDispatchToProps = dispatch => {
