@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ArticleList from '../components/article/ArticleList';
+import ArticleCard from '../components/article/ArticleCard';
 
 class ArticlesContainer extends Component {
+
   render() {
     return(
       <div>
         Articles Here!
-        <ArticleList />
       </div>
     )
   }

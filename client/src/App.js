@@ -8,7 +8,7 @@ import { fetchHeadlines } from './actions/articleActions';
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchHeadlines()
+    this.props.fetchHeadlines("us")
   }
 
   render() {
