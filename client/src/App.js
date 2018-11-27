@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import ArticlesContainer from './containers/ArticlesContainer'
-import FiltersContainer from './containers/FiltersContainer'
-import Navbar from './components/layout/Navbar'
+import ArticlesContainer from './containers/ArticlesContainer';
+import FiltersContainer from './containers/FiltersContainer';
+import Navbar from './components/layout/Navbar';
+import { connect } from 'react-redux';
+import { fetchHeadlines } from './actions/articleActions';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchHeadlines()
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,7 +20,7 @@ class App extends Component {
 
         <Navbar />
         <FiltersContainer />
-        <ArticlesContainer />
+        <ArticlesContainer articles={this.props.articles}/>
 
         <footer className="App-footer">
           <p>© Newsfeedr - Powered by News API</p>
@@ -28,4 +34,8 @@ const mapStateToProps = state => {
   return {articles: state.articles}
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return { fetchHeadlines: () => dispatch(fetchHeadlines())}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
