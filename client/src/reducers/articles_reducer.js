@@ -4,10 +4,10 @@ export default function articlesReducer(state = {loading: false, pictures: []}, 
       return {...state, loading: true}
 
     case 'FETCH_HEADLINE_ARTICLES':
-      return {loading: false, articles: action.payload.articles}
+      return {...state, loading: false, articles: action.payload.articles}
 
     case 'FETCH_FILTERED_ARTICLES':
-      return {loading: false, articles: action.payload.articles}
+      return {...state, loading: false, articles: action.payload.articles}
 
     default:
       return state;
