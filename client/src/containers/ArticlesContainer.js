@@ -6,7 +6,7 @@ class ArticlesContainer extends Component {
   render() {
     return(
       <div>
-        Articles Here!
+        Articles
       </div>
     )
   }
