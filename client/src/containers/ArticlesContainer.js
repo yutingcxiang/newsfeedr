@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import ArticleCard from '../components/articles/ArticleCard';
+import Article from '../components/articles/Article';
 import { connect } from 'react-redux';
 
 class ArticlesContainer extends Component {
-  // constructor(props){
-  //    super(props);
-  //    this.state ={
-  //        arrticles: '',
-  //     }
-  //  }
 
   renderArticles = () => {
-   return (this.props.articles.map(article => {
-     return <ArticleCard /> })
+   return (this.props.articles.map((article, index) => {
+     return <Article key={index} publishedAt={article.publishedAt} source={article.source.name} title={article.title} url={article.url} /> })
      )
    }
 
