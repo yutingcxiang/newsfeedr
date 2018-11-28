@@ -1,18 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HeadlinesContainer from '../../containers/HeadlinesContainer'
-import FiltersContainer from '../../containers/FiltersContainer'
-import ArticlesContainer from '../../containers/ArticlesContainer'
+import SourcesContainer from '../../containers/SourcesContainer'
+import CategoriesContainer from '../../containers/CategoriesContainer'
+
+const Headline = () => <h2>Headlines</h2>
+const Source = () => <h2>Search Sources</h2>
+const Category =() => <h2>Browse Categories</h2>
 
 const Navbar = () => {
   return(
     <Router>
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/search">Search News</Link>
+        <Link to="/headlines"> Headlines </Link>
+        <Link to="/sources"> Search Sources </Link>
+        <Link to="/categories"> Browse Categories </Link>
+
         <Route exact path="/" component={HeadlinesContainer} />
-        <Route exact path="/search" component={FiltersContainer} />
-        <Route exact path="/results" component={ArticlesContainer} />
+        <Route exact path="/sources" component={SourcesContainer} />
+        <Route exact path="/categories" component={CategoriesContainer} />
       </div>
     </Router>
   )

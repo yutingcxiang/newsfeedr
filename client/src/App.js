@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import HeadlinesContainer from './containers/HeadlinesContainer';
-import ArticlesContainer from './containers/ArticlesContainer';
-import FiltersContainer from './containers/FiltersContainer';
+import SourcesContainer from './containers/SourcesContainer';
+import CategoriesContainer from './containers/CategoriesContainer';
 import Navbar from './components/layout/Navbar';
 import { connect } from 'react-redux';
 import { fetchHeadlines } from './actions/articleActions';
@@ -20,11 +20,10 @@ class App extends Component {
         </header>
 
         <Navbar />
-        <FiltersContainer />
         <HeadlinesContainer articles={this.props.articles.articles}/>
 
         <footer className="App-footer">
-          <p>© Newsfeedr - Powered by News API</p>
+          <h5>© Newsfeedr - Powered by News API</h5>
         </footer>
       </div>
     );

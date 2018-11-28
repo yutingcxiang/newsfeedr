@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Article from '../components/articles/Article';
+import Category from '../components/articles/Category';
 import { connect } from 'react-redux';
 
-class ArticlesContainer extends Component {
+class CategoriesContainer extends Component {
 
   renderArticles = () => {
    return (this.props.articles.map((article, index) => {
-     return <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
+     return <Category key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
      )
    }
 
@@ -23,4 +23,4 @@ const mapStateToProps = state => {
   return {articles: state.articles.articles}
 }
 
-export default connect(mapStateToProps)(ArticlesContainer);
+export default connect(mapStateToProps)(CategoriesContainer);

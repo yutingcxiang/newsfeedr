@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Article = (props) => {
+const Source = (props) => {
   return(
     <div>
       <h2><a href={props.url}>{props.title.split("-")[0]}</a></h2>
@@ -10,4 +10,4 @@ const Article = (props) => {
   )
 }
 
-export default Article;
+export default Source;
