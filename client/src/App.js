@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import HeadlinesContainer from './containers/HeadlinesContainer';
 import ArticlesContainer from './containers/ArticlesContainer';
 import FiltersContainer from './containers/FiltersContainer';
 import Navbar from './components/layout/Navbar';
@@ -20,7 +21,7 @@ class App extends Component {
 
         <Navbar />
         <FiltersContainer />
-        <ArticlesContainer articles={this.props.articles.articles}/>
+        <HeadlinesContainer articles={this.props.articles.articles}/>
 
         <footer className="App-footer">
           <p>© Newsfeedr - Powered by News API</p>
