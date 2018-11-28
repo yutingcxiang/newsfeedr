@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class HeadlinesContainer extends Component {
 
-  renderHeadlines = () => {
+  renderArticles = () => {
    return (this.props.articles.map((article, index) => {
      return <Headline key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
      )
@@ -13,7 +13,7 @@ class HeadlinesContainer extends Component {
   render() {
     return(
       <div>
-        {this.renderHeadlines()}
+        {this.renderArticles()}
       </div>
     )
   }

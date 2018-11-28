@@ -6,7 +6,8 @@ class SourcesContainer extends Component {
 
   renderArticles = () => {
    return (this.props.articles.map((article, index) => {
-     return <Source key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
+     // return <Source key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
+     return <div>TESTING</div> })
      )
    }
 

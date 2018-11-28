@@ -20,8 +20,7 @@ class App extends Component {
         </header>
 
         <Navbar />
-        <HeadlinesContainer articles={this.props.articles.articles}/>
-
+        
         <footer className="App-footer">
           <h5>© Newsfeedr - Powered by News API</h5>
         </footer>

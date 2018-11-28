@@ -16,7 +16,7 @@ const Navbar = () => {
         <Link to="/sources"> Search Sources </Link>
         <Link to="/categories"> Browse Categories </Link>
 
-        <Route exact path="/" component={HeadlinesContainer} />
+        <Route exact path="/headlines" component={HeadlinesContainer} />
         <Route exact path="/sources" component={SourcesContainer} />
         <Route exact path="/categories" component={CategoriesContainer} />
       </div>
