@@ -1,3 +1,4 @@
+// Fetching Headlines
 export function fetchHeadlines() {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'});
@@ -15,3 +16,9 @@ export function fetchFilteredNews(query) {
       .then(articles => dispatch({type: 'FETCH_FILTERED_ARTICLES', payload: articles}))
   }
 }
+
+// Fetching Sources
+
+
+
+// Fetching Categories
