@@ -12,11 +12,11 @@ const Navbar = () => {
   return(
     <Router>
       <div>
-        <Link to="/headlines"> Headlines </Link>
+        <Link to="/"> Headlines </Link>
         <Link to="/sources"> Search Sources </Link>
         <Link to="/categories"> Browse Categories </Link>
 
-        <Route exact path="/headlines" component={HeadlinesContainer} />
+        <Route exact path="/" component={HeadlinesContainer} />
         <Route exact path="/sources" component={SourcesContainer} />
         <Route exact path="/categories" component={CategoriesContainer} />
       </div>

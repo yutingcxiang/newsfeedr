@@ -8,17 +8,22 @@ export function fetchHeadlines() {
   }
 }
 
-export function fetchFilteredNews(query) {
+// Fetching sources and categories
+export function fetchSourcesCategories() {
   return (dispatch) => {
-    dispatch({type: 'LOADING_ARTICLES'}, query);
-    return fetch('/api/search_all_news')
+    dispatch({type: 'LOADING_ARTICLES'});
+    return fetch('/api/sources_categories')
       .then(response => response.json())
-      .then(articles => dispatch({type: 'FETCH_FILTERED_ARTICLES', payload: articles}))
+      .then(sources => dispatch({type: 'FETCH_SOURCES', payload: sources}))
   }
 }
 
-// Fetching Sources
-
-
-
-// Fetching Categories
+//Fetch all articles relevant to search query
+// export function fetchFilteredNews(query) {
+//   return (dispatch) => {
+//     dispatch({type: 'LOADING_ARTICLES'}, query);
+//     return fetch('/api/search_all_news')
+//       .then(response => response.json())
+//       .then(articles => dispatch({type: 'FETCH_FILTERED_ARTICLES', payload: articles}))
+//   }
+// }
