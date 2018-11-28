@@ -6,14 +6,13 @@ class ArticlesContainer extends Component {
 
   renderArticles = () => {
    return (this.props.articles.map((article, index) => {
-     return <Article key={index} publishedAt={article.publishedAt} source={article.source.name} title={article.title} url={article.url} /> })
+     return <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
      )
    }
 
   render() {
     return(
       <div>
-        Articles
         {this.renderArticles()}
       </div>
     )

@@ -1,17 +1,13 @@
 import React from 'react';
 
-const Article = ({props}) => {
+const Article = (props) => {
   return(
     <div>
-      Article
+      <h2><a href={props.url}>{props.title.split("-")[0]}</a></h2>
+      <p>{props.publishedAt} | {props.title.split("-")[1]}</p>
+      <p>{props.description}</p>
     </div>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    articles: state.articles
-  }
-}
-
-export default Article
+export default Article;
