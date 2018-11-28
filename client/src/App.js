@@ -20,9 +20,9 @@ class App extends Component {
         </header>
 
         <Navbar />
-        
+
         <footer className="App-footer">
-          <h5>© Newsfeedr - Powered by News API</h5>
+          <h5><a href='https://newsapi.org/'>© Newsfeedr - Powered by News API</a></h5>
         </footer>
       </div>
     );
