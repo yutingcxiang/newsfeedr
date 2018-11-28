@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
-import ArticleCard from '../components/article/ArticleCard';
+import ArticleCard from '../components/articles/ArticleCard';
+import { connect } from 'react-redux';
 
 class ArticlesContainer extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     articles: ''
-  //   }
-  // }
-
-  // renderArticles = () => {
-  //  return this.props.articles.articles.map(article => {
-  //    return <ArticleCard />
-  //   })
+  // constructor(props){
+  //    super(props);
+  //    this.state ={
+  //        arrticles: '',
+  //     }
   //  }
+
+  renderArticles = () => {
+   return (this.props.articles.map(article => {
+     return <ArticleCard /> })
+     )
+   }
 
   render() {
     return(
       <div>
         Articles
+        {this.renderArticles()}
       </div>
     )
   }
 }
 
-export default ArticlesContainer
+const mapStateToProps = state => {
+  return {articles: state.articles.articles}
+}
+
+export default connect(mapStateToProps)(ArticlesContainer);
