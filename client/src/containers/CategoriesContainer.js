@@ -14,7 +14,7 @@ class CategoriesContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles.articles}
+  return {sources: state.articles.sources}
 }
 
 export default connect(mapStateToProps)(CategoriesContainer);

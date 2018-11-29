@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Source from '../components/articles/Source';
+import Category from '../components/articles/Category';
 import { connect } from 'react-redux';
 
 class SourcesContainer extends Component {
@@ -10,10 +11,21 @@ class SourcesContainer extends Component {
      )
    }
 
+   renderCategories = () => {
+    return (this.props.sources.map((category) => {
+      return <Category category={category.category} /> })
+      )
+    }
+
   render() {
     return(
       <div>
-        {this.renderSources()}
+        <div>
+          {this.renderSources()}
+        </div>
+        <ul>
+          {this.renderCategories()}
+        </ul>
       </div>
     )
   }

@@ -5,16 +5,16 @@ import SourcesContainer from '../../containers/SourcesContainer'
 import CategoriesContainer from '../../containers/CategoriesContainer'
 
 const Headline = () => <h2>Headlines</h2>
-const Source = () => <h2>Search Sources</h2>
-const Category =() => <h2>Browse Categories</h2>
+const Source = () => <h2>Browse Stories</h2>
+const Category =() => <h2>Search News</h2>
 
 const Navbar = () => {
   return(
     <Router>
       <div>
         <Link to="/"> Headlines </Link>
-        <Link to="/sources"> Search Sources </Link>
-        <Link to="/categories"> Browse Categories </Link>
+        <Link to="/sources"> Browse Stories </Link>
+        <Link to="/categories"> Search News </Link>
 
         <Route exact path="/" component={HeadlinesContainer} />
         <Route exact path="/sources" component={SourcesContainer} />
