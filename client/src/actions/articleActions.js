@@ -14,7 +14,7 @@ export function fetchSourcesCategories() {
     dispatch({type: 'LOADING_ARTICLES'});
     return fetch('/api/sources_categories')
       .then(response => response.json())
-      .then(sources => dispatch({type: 'FETCH_SOURCES', payload: sources}))
+      .then(articles => dispatch({type: 'FETCH_SOURCES', payload: articles}))
   }
 }
 

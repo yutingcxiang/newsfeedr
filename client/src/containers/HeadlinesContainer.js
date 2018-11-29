@@ -20,7 +20,7 @@ class HeadlinesContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles.articles}
+  return {articles: state.articles.headlines}
 }
 
 export default connect(mapStateToProps)(HeadlinesContainer);
