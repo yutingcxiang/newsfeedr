@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 class SourcesContainer extends Component {
 
   renderSources = () => {
-   return (this.props.articles.map((article, index) => {
-     // return <Source key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
-     return <div>TESTING</div> })
+   return (this.props.sources.map((source, index) => {
+     return <Source key={index} name={source.name} description={source.description} url={source.url} category={source.category} country={source.country} /> })
      )
    }
 
@@ -21,7 +20,7 @@ class SourcesContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles.sources}
+  return {sources: state.articles.sources}
 }
 
 export default connect(mapStateToProps)(SourcesContainer);
