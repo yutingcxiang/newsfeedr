@@ -5,11 +5,12 @@ import SourcesContainer from './containers/SourcesContainer';
 import CategoriesContainer from './containers/CategoriesContainer';
 import Navbar from './components/layout/Navbar';
 import { connect } from 'react-redux';
-import { fetchHeadlines } from './actions/articleActions';
+import { fetchHeadlines, fetchSourcesCategories } from './actions/articleActions';
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchHeadlines("us")
+    this.props.fetchSourcesCategories()
   }
 
   render() {
@@ -34,7 +35,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return { fetchHeadlines: () => dispatch(fetchHeadlines())}
+  return {
+    fetchHeadlines: () => dispatch(fetchHeadlines()),
+    fetchSourcesCategories: () => dispatch(fetchSourcesCategories())
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
