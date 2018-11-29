@@ -1,4 +1,4 @@
-export default function articlesReducer(state = {loading: false, headlines: [], sources: []}, action) {
+export default function articlesReducer(state = {loading: false, headlines: [], sources: [], categories: []}, action) {
   switch (action.type) {
     case 'LOADING_ARTICLES':
       return {...state, loading: true}
@@ -10,7 +10,10 @@ export default function articlesReducer(state = {loading: false, headlines: [], 
     //   return {...state, loading: false, articles: action.payload.articles}
 
     case 'FETCH_SOURCES':
-      return {...state, loading: false, sources: action.payload.sources}
+      const category = action.payload.sources.map(source => source.category)
+      const uniqueCategory = [...new Set(category)]
+
+      return {...state, loading: false, sources: action.payload.sources, categories: uniqueCategory}
 
     default:
       return state;
