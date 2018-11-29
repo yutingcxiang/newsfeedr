@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HeadlinesContainer from '../../containers/HeadlinesContainer'
 import SourcesContainer from '../../containers/SourcesContainer'
-import CategoriesContainer from '../../containers/CategoriesContainer'
+import SearchContainer from '../../containers/SearchContainer'
 
 const Headline = () => <h2>Headlines</h2>
 const Source = () => <h2>Browse Stories</h2>
-const Category =() => <h2>Search News</h2>
+const Search =() => <h2>Search News</h2>
 
 const Navbar = () => {
   return(
@@ -14,11 +14,11 @@ const Navbar = () => {
       <div>
         <Link to="/"> Headlines </Link>
         <Link to="/sources"> Browse Stories </Link>
-        <Link to="/categories"> Search News </Link>
+        <Link to="/search"> Search News </Link>
 
         <Route exact path="/" component={HeadlinesContainer} />
         <Route exact path="/sources" component={SourcesContainer} />
-        <Route exact path="/categories" component={CategoriesContainer} />
+        <Route exact path="/search" component={SearchContainer} />
       </div>
     </Router>
   )
