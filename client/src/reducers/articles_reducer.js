@@ -6,8 +6,8 @@ export default function articlesReducer(state = {loading: false, headlines: [], 
     case 'FETCH_HEADLINE_ARTICLES':
       return {...state, loading: false, headlines: action.payload.articles}
 
-    // case 'FETCH_FILTERED_ARTICLES':
-    //   return {...state, loading: false, articles: action.payload.articles}
+    case 'FETCH_FILTERED_ARTICLES':
+      return {...state, loading: false, articles: action.payload.articles}
 
     case 'FETCH_SOURCES':
       const category = action.payload.sources.map(source => source.category)
