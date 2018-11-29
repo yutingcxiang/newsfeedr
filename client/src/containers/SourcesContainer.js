@@ -12,9 +12,7 @@ class SourcesContainer extends Component {
    }
 
    renderCategories = () => {
-    return (this.props.sources.map((category) => {
-      return <Category category={category.category} /> })
-      )
+    return (this.props.categories.map(category => <Category name={category}/>))
     }
 
   render() {
@@ -32,7 +30,10 @@ class SourcesContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {sources: state.articles.sources}
+  return {
+    sources: state.articles.sources,
+    categories: state.articles.categories
+  }
 }
 
 export default connect(mapStateToProps)(SourcesContainer);
