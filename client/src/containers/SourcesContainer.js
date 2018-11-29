@@ -4,12 +4,19 @@ import CategoriesList from '../components/articles/CategoriesList';
 import { connect } from 'react-redux';
 
 class SourcesContainer extends Component {
+  showSourcesList = event => {
+    alert("working!")
+  }
+
+  showCategoriesList = event => {
+    alert("also working!")
+  }
 
   render() {
     return(
       <div>
-        <SourcesList />
-        <CategoriesList />
+        <button onClick={this.showSourcesList}>Browse By Source</button>
+        <button onClick={this.showCategoriesList}>Browse Category</button>
       </div>
     )
   }
