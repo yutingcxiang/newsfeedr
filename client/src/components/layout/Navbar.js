@@ -4,10 +4,6 @@ import HeadlinesContainer from '../../containers/HeadlinesContainer'
 import SourcesContainer from '../../containers/SourcesContainer'
 import SearchContainer from '../../containers/SearchContainer'
 
-const Headline = () => <h2>Headlines</h2>
-const Source = () => <h2>Browse Stories</h2>
-const Search =() => <h2>Search News</h2>
-
 const Navbar = () => {
   return(
     <Router>
