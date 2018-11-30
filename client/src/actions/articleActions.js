@@ -19,7 +19,7 @@ export function fetchSources() {
 }
 
 //Fetch all articles relevant to search query
-export function fetchFilteredNews(query) {
+export function searchArticles(query) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'}, query);
     return fetch('/api/search_all_news')

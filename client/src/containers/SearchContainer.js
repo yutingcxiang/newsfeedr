@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import SearchInput from '../components/filters/SearchInput'
+import SearchResults from '../components/filters/SearchResults'
 
 class SearchContainer extends Component {
-  state = {
-    text: ''
-  }
-
-  handleChange = event => {
-    this.setState({
-      text: event.target.value
-    })
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-    this.props.fetchFilteredNews(this.state.text)
-    this.setState({
-      text: ''
-    })
-  }
 
   render() {
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Search news..." value={this.state.text} onChange={this.handleChange}/>
-          <input type="submit" />
-        </form>
+        <SearchInput searchArticles={this.props.searchArticles}/>
+        <SearchResults />
       </div>
     )
   }
 }
 
-export default SearchContainer;
+const mapStateToProps = state => {
+  return {articles: this.state.articles}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    searchArticles: text => dispatch({type: 'SEARCH_ARTICLES', text})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
