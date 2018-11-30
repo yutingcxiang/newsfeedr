@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchInput from '../components/filters/SearchInput';
-import SearchResults from '../components/filters/SearchResults';
+import ResultsList from '../components/articles/ResultsList';
 
 class SearchContainer extends Component {
 
@@ -8,7 +8,7 @@ class SearchContainer extends Component {
     return(
       <div>
         <SearchInput searchArticles={this.props.searchArticles}/>
-        <SearchResults results={this.props.results}/>
+        <ResultsList results={this.props.results}/>
       </div>
     )
   }

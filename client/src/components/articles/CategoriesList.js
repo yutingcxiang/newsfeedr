@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class CategoriesList extends Component {
 
-   renderCategories = () => {
+  renderCategories = () => {
     return (this.props.categories.map(category => <Category name={category}/>))
     }
 
