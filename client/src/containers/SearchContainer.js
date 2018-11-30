@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SearchInput from '../components/filters/SearchInput'
-import SearchResults from '../components/filters/SearchResults'
+import SearchInput from '../components/filters/SearchInput';
+import SearchResults from '../components/filters/SearchResults';
 
 class SearchContainer extends Component {
 
@@ -16,7 +16,7 @@ class SearchContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: this.state.articles}
+  return {articles: state.articles.results}
 }
 
 const mapDispatchToProps = dispatch => {

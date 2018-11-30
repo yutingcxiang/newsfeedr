@@ -13,7 +13,7 @@ class SearchInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.fetchFilteredNews(this.state.text)
+    this.props.searchArticles(this.state.text)
     this.setState({
       text: ''
     })
