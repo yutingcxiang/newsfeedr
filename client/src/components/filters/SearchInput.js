@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { searchArticles } from '../../actions/articleActions';
 
 class SearchInput extends Component {
   state = {
@@ -31,4 +33,14 @@ class SearchInput extends Component {
   }
 }
 
-export default SearchInput;
+const mapStateToProps = state => {
+  return {articles: state.articles.results}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    searchArticles: (query) => dispatch(searchArticles(query))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchInput);

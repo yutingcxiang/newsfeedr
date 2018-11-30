@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     render json: @sources_categories, status: 200
   end
 
-  # Search all news with default value of 'technology'.
+  # Search all news based on user query.
   def filtered_news
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['API_KEY']

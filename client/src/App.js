@@ -5,7 +5,7 @@ import SourcesContainer from './containers/SourcesContainer';
 import SearchContainer from './containers/SearchContainer';
 import Navbar from './components/layout/Navbar';
 import { connect } from 'react-redux';
-import { fetchHeadlines, fetchSources, searchArticles } from './actions/articleActions';
+import { fetchHeadlines, fetchSources } from './actions/articleActions';
 
 class App extends Component {
   componentDidMount() {
