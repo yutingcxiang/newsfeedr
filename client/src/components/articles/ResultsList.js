@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Headline from './Headline';
+import Article from './Article';
 import { connect } from 'react-redux';
 
 class SearchResults extends Component {
 
   renderResults = () => {
-    return (this.props.results.map((article, index) => <Headline key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
-    }
+    return (this.props.results.map((article, index) => <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
+  }
 
   render() {
     return(

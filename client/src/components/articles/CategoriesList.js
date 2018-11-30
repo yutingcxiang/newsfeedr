@@ -6,7 +6,7 @@ class CategoriesList extends Component {
 
   renderCategories = () => {
     return (this.props.categories.map(category => <Category name={category}/>))
-    }
+  }
 
   render() {
     return(

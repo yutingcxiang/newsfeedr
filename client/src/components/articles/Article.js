@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Headline = (props) => {
+const Article = (props) => {
   return(
     <div>
       <h2><a href={props.url} target="_blank">{props.title.split("-")[0]}</a></h2>
@@ -10,4 +10,4 @@ const Headline = (props) => {
   )
 }
 
-export default Headline;
+export default Article;

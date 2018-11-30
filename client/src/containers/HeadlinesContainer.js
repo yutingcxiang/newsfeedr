@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import Headline from '../components/articles/Headline';
+import Article from '../components/articles/Article';
 import { connect } from 'react-redux';
 
 class HeadlinesContainer extends Component {
 
-  renderArticles = () => {
-   return (this.props.articles.map((article, index) => {
-     return <Headline key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> })
-     )
-   }
+  renderNews = () => {
+    return (this.props.articles.map((article, index) => <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
+  }
 
   render() {
     return(
       <div>
-        {this.renderArticles()}
+        {this.renderNews()}
       </div>
     )
   }

@@ -5,10 +5,9 @@ import { connect } from 'react-redux';
 class SourcesList extends Component {
 
   renderSources = () => {
-   return (this.props.sources.map((source, index) => {
-     return <Source key={index} name={source.name} description={source.description} url={source.url} category={source.category} country={source.country} /> })
-     )
-   }
+   return (this.props.sources.map((source, index) => <Source key={index} name={source.name} description={source.description} url={source.url} category={source.category} />))
+  }
+
 
   render() {
     return(
