@@ -24,6 +24,9 @@ class ArticlesController < ApplicationController
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
       req.params['q'] = params["query"]
+      req.params['sortBy'] = 'relevancy'
+      req.params['pageSize'] = 100
+      req.params['page'] = 1
     end
     @query_articles = JSON.parse(response.body)
     render json: @query_articles, status: 200
