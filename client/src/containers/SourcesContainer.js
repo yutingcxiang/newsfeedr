@@ -4,6 +4,11 @@ import CategoriesList from '../components/articles/CategoriesList';
 import { connect } from 'react-redux';
 
 class SourcesContainer extends Component {
+  state = {
+    showSources: false,
+    showCategories: false,
+  }
+
   showSourcesList = event => {
     alert("working!")
   }
