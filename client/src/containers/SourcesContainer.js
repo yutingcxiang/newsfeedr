@@ -9,19 +9,30 @@ class SourcesContainer extends Component {
     showCategories: false,
   }
 
-  showSourcesList = event => {
-    alert("working!")
+  renderSources = event => {
+    this.setState({
+      showSources: true,
+      showCategories: false,
+    })
   }
 
-  showCategoriesList = event => {
-    alert("also working!")
+  renderCategories = event => {
+    this.setState({
+      showSources: false,
+      showCategories: true
+    })
   }
 
   render() {
+    const showSources = this.state.showSources
+    const showCategories = this.state.showCategories
+
     return(
       <div>
-        <button onClick={this.showSourcesList}>Browse By Source</button>
-        <button onClick={this.showCategoriesList}>Browse Category</button>
+        <button onClick={this.renderSources}>Browse By Source</button>
+        <button onClick={this.renderCategories}>Browse Category</button>
+        {showSources && <SourcesList />}
+        {showCategories && <CategoriesList />}
       </div>
     )
   }
