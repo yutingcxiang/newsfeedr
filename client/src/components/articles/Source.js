@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Source = (props) => {
-  return(
-    <div>
-      <h3><a href={props.url}>{props.name}</a></h3>
-      <p>{props.description}</p>
-    </div>
-  )
+class Source extends React.Component {
+
+  render() {
+    return(
+      <div>
+        <h3>{this.props.name}</h3>
+        <p>{this.props.description}</p>
+      </div>
+    )
+  }
 }
+
 
 export default Source;
