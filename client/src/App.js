@@ -6,6 +6,7 @@ import SearchContainer from './containers/SearchContainer';
 import Navbar from './components/layout/Navbar';
 import { connect } from 'react-redux';
 import { fetchHeadlines, fetchSources } from './actions/articleActions';
+import moment from 'moment';
 
 class App extends Component {
   componentDidMount() {

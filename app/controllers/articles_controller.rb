@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
     response = Faraday.get 'https://newsapi.org/v2/top-headlines?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
       req.params['country'] = country
+      req.params['pageSize'] = 100
+      req.params['page'] = 1
     end
     @top_headlines = JSON.parse(response.body)
     render json: @top_headlines, status: 200
