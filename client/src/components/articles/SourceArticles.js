@@ -4,24 +4,22 @@ import { searchSourceArticles } from '../../actions/articleActions';
 import ResultsList from './ResultsList';
 
 class SourceArticles extends Component {
-  constructor(){
-    super()
-    this.state = {
-      sourceArticles: ''
-    }
+  state = {
+    done: false
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.searchSourceArticles(this.props.match.params.id)
+      .then(() => this.setState({done: true}))
+      .then(() => console.log(this.props.sourceArticles))
   }
 
   render(){
-    const sourceArticles = this.state.sourceArticles
 
     return(
       <div>
         <h2>{this.props.match.params.id}</h2>
-        {sourceArticles.length > 0 && <ResultsList results={this.props.sourceArticles}/>}
+        {!this.props.done && <ResultsList results={this.props.sourceArticles}/>}
       </div>
     )
   }

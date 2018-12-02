@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SourceArticles from './SourceArticles';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class Source extends React.Component {
@@ -13,6 +12,5 @@ class Source extends React.Component {
     )
   }
 }
-
 
 export default Source;
