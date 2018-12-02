@@ -13,12 +13,12 @@ class ArticlesController < ApplicationController
   end
 
   # Returns sources from popular headlines (can also be used to get categories)
-  def sources_categories
+  def sources
     response = Faraday.get 'https://newsapi.org/v2/sources?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
     end
-    @sources_categories = JSON.parse(response.body)
-    render json: @sources_categories, status: 200
+    @sources = JSON.parse(response.body)
+    render json: @sources, status: 200
   end
 
   # Search all news based on user query.

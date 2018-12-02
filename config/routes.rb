@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope :api do
     resources :articles
       get '/top_headlines', to: 'articles#top_headlines'
-      get '/sources_categories', to: 'articles#sources_categories'
+      get '/sources', to: 'articles#sources'
       get '/filtered_news/:query', to: 'articles#filtered_news'
   end
 end
