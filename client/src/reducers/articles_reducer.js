@@ -1,4 +1,4 @@
-export default function articlesReducer(state = {loading: false, headlines: [], sources: [], sourceArticles:, results:[]}, action) {
+export default function articlesReducer(state = {loading: false, headlines: [], sources: [], sourceArticles: [], results:[]}, action) {
   switch (action.type) {
     case 'LOADING_ARTICLES':
       return {...state, loading: true}

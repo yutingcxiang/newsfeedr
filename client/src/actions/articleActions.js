@@ -32,7 +32,7 @@ export function searchArticles(query) {
 export function searchSourceArticles(source) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'}, source);
-    return fetch(`/api/filtered_news/${source}`)
+    return fetch(`/api/sources/${source}`)
       .then(response => response.json())
       .then(articles => dispatch({type: 'FETCH_SOURCE_ARTICLES', payload: articles}))
   }

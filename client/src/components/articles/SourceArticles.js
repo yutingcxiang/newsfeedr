@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { searchSourceArticles } from '../../actions/articleActions';
 
 class SourceArticles extends Component {
   componentDidMount() {
-    this.props.searchArticles()
+    this.props.searchSourceArticles(this.props.match.params.id)
   }
 
   render(){
@@ -16,12 +18,12 @@ class SourceArticles extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles.results}
+  return {articles: state.sourceArticles.results}
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchArticles: (this.props.match.params.id) => dispatch(searchArticles(this.props.match.params.id))
+    searchSourceArticles: (source) => dispatch(searchSourceArticles(source))
   }
 }
 
