@@ -10,7 +10,7 @@ export default function articlesReducer(state = {loading: false, headlines: [], 
       return {...state, loading: false, results: action.payload.articles}
 
     case 'FETCH_SOURCE_ARTICLES':
-      return {...state, loading: false, results: action.payload.sourceArticles}
+      return {...state, loading: false, sourceArticles: action.payload.articles}
 
     case 'FETCH_SOURCES':
       return {...state, loading: false, sources: action.payload.sources}

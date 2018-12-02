@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchSourceArticles } from '../../actions/articleActions';
+import ResultsList from './ResultsList';
 
 class SourceArticles extends Component {
   componentDidMount() {
