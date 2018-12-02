@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SourceArticles = (props) => (
-  <div>
-    <h2>{props.match.params.id}</h2>
-  </div>
-)
+class SourceArticles extends Component {
+  componentDidMount() {
+    this.props.searchArticles()
+  }
 
-export default SourceArticles;
+  render(){
+    return(
+      <div>
+        <h2>{this.props.match.params.id}</h2>
+      </div>
+    )
+  }
+
+}
+
+const mapStateToProps = state => {
+  return {articles: state.articles.results}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    searchArticles: (this.props.match.params.id) => dispatch(searchArticles(this.props.match.params.id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SourceArticles);
