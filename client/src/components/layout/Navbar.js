@@ -16,7 +16,7 @@ const Navbar = () => {
         <Route exact path="/" component={HeadlinesContainer} />
         <Route exact path="/sources" component={SourcesContainer} />
         <Route exact path="/search" component={SearchContainer} />
-        <Route path="/sources/:id" render={(props) => <SourceArticles {...props}/>} />
+        <Route path="/sources/:id" component={SourceArticles} />
       </div>
     </Router>
   )

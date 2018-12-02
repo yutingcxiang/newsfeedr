@@ -12,7 +12,7 @@ export function fetchHeadlines() {
 export function fetchSources() {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'});
-    return fetch('/api/sources_categories')
+    return fetch('/api/sources')
       .then(response => response.json())
       .then(articles => dispatch({type: 'FETCH_SOURCES', payload: articles}))
   }

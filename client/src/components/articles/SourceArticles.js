@@ -18,7 +18,7 @@ class SourceArticles extends Component {
 }
 
 const mapStateToProps = state => {
-  return {articles: state.sourceArticles.results}
+  return {sourceArticles: state.articles.sourceArticles}
 }
 
 const mapDispatchToProps = dispatch => {
