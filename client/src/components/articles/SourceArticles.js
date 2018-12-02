@@ -4,14 +4,24 @@ import { searchSourceArticles } from '../../actions/articleActions';
 import ResultsList from './ResultsList';
 
 class SourceArticles extends Component {
-  componentDidMount() {
+  constructor(){
+    super()
+    this.state = {
+      sourceArticles: ''
+    }
+  }
+
+  componentWillMount() {
     this.props.searchSourceArticles(this.props.match.params.id)
   }
 
   render(){
+    const sourceArticles = this.state.sourceArticles
+
     return(
       <div>
         <h2>{this.props.match.params.id}</h2>
+        {sourceArticles.length > 0 && <ResultsList results={this.props.sourceArticles}/>}
       </div>
     )
   }
