@@ -13,7 +13,7 @@ class SourceArticles extends Component {
 
     return(
       <div>
-        <h2>{this.props.match.params.id}</h2>
+        <h2>{this.props.location.state.name}</h2>
         <ArticlesList sourceArticles={this.props.sourceArticles}/>
       </div>
     )
