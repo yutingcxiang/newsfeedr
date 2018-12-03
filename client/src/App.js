@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import HeadlinesContainer from './containers/HeadlinesContainer';
-import SourcesContainer from './containers/SourcesContainer';
-import SearchContainer from './containers/SearchContainer';
 import Navbar from './components/layout/Navbar';
-import { connect } from 'react-redux';
 import moment from 'moment';
 
 class App extends Component {
