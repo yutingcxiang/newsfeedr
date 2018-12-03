@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchSourceArticles } from '../../actions/articleActions';
-import ArticlesList from './ArticlesList';
+import { searchSourceArticles } from '../actions/articleActions';
+import ArticlesList from '../components/articles/ArticlesList';
 
-class SourceArticles extends Component {
+class SourceArticlesContainer extends Component {
 
   componentDidMount() {
     this.props.searchSourceArticles(this.props.match.params.id)
@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SourceArticles);
+export default connect(mapStateToProps, mapDispatchToProps)(SourceArticlesContainer);
