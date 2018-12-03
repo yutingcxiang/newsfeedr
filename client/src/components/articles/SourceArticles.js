@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchSourceArticles } from '../../actions/articleActions';
-import ResultsList from './ResultsList';
+import ArticlesList from './ArticlesList';
 
 class SourceArticles extends Component {
-  state = {
-    done: false
-  }
 
   componentDidMount() {
     this.props.searchSourceArticles(this.props.match.params.id)
-      .then(() => this.setState({done: true}))
-      .then(() => console.log(this.props.sourceArticles))
   }
 
   render(){
@@ -19,7 +14,7 @@ class SourceArticles extends Component {
     return(
       <div>
         <h2>{this.props.match.params.id}</h2>
-        {!this.props.done && <ResultsList results={this.props.sourceArticles}/>}
+        <ArticlesList sourceArticles={this.props.sourceArticles}/>
       </div>
     )
   }
