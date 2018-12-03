@@ -9,9 +9,11 @@ class ResultsList extends Component {
   }
 
   render() {
+    const results = this.props.results
+
     return(
       <div>
-        {this.renderResults()}
+        {results !== undefined && this.renderResults()}
       </div>
     )
   }

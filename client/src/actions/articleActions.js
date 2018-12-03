@@ -25,8 +25,10 @@ export function searchArticles(query) {
     return fetch(`/api/filtered/${query}`)
       .then(response => response.json())
       .then(articles => dispatch({type: 'FETCH_FILTERED_ARTICLES', payload: articles}))
+      .catch(error => console.log(error))
   }
 }
+
 
 //Fetch all articles relevant to search query
 export function searchSourceArticles(source) {
