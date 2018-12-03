@@ -14,7 +14,6 @@ class ResultsList extends Component {
     return(
       <div>
         {results !== undefined && this.renderResults()}
-        {results === undefined && <p>No results found. Please try again.</p>}
       </div>
     )
   }
