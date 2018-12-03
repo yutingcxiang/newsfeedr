@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import Article from '../components/articles/Article';
+import HeadlinesList from '../components/articles/HeadlinesList';
 import { connect } from 'react-redux';
+import { fetchHeadlines } from '../actions/articleActions';
 
 class HeadlinesContainer extends Component {
-
-  renderNews = () => {
-    return (this.props.articles.map((article, index) => <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
+  componentDidMount() {
+    this.props.fetchHeadlines("us")
   }
 
   render() {
     return(
       <div>
-        {this.renderNews()}
+        <HeadlinesList />
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles.headlines}
+  return {articles: state.articles.articles}
 }
 
-export default connect(mapStateToProps)(HeadlinesContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchHeadlines: () => dispatch(fetchHeadlines())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeadlinesContainer);

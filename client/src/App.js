@@ -5,14 +5,9 @@ import SourcesContainer from './containers/SourcesContainer';
 import SearchContainer from './containers/SearchContainer';
 import Navbar from './components/layout/Navbar';
 import { connect } from 'react-redux';
-import { fetchHeadlines, fetchSources } from './actions/articleActions';
 import moment from 'moment';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchHeadlines("us")
-    this.props.fetchSources()
-  }
 
   render() {
     return (
@@ -31,15 +26,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {articles: state.articles.articles}
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchHeadlines: () => dispatch(fetchHeadlines()),
-    fetchSources: () => dispatch(fetchSources())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
