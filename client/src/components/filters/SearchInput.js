@@ -25,6 +25,7 @@ class SearchInput extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
+          <label>Looking for something specific?</label><br />
           <input type="text" placeholder="Search news..." value={this.state.text} onChange={this.handleChange}/>
           <input type="submit" />
         </form>

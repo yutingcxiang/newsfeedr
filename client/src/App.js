@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/layout/Navbar';
-import moment from 'moment';
+import Moment from 'react-moment';
 
 class App extends Component {
 

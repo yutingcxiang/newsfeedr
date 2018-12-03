@@ -9,7 +9,7 @@ const Navbar = () => {
   return(
     <Router>
       <div>
-        <Link to="/"> Headlines </Link>
+        <Link to="/"> Recent Headlines </Link>
         <Link to="/sources"> Browse Stories </Link>
         <Link to="/search"> Search News </Link>
 
