@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import { connect } from 'react-redux';
+import SortFilter from '../filters/SortFilter';
 
 class ArticlesList extends Component {
 
@@ -11,6 +12,7 @@ class ArticlesList extends Component {
   render() {
     return(
       <div>
+        <SortFilter />
         {this.renderArticles()}
       </div>
     )
