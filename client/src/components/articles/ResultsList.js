@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import { connect } from 'react-redux';
+import SortFilter from '../filters/SortFilter';
 
 class ResultsList extends Component {
+  state = {
+    results: []
+  }
 
   renderResults = () => {
     return (this.props.results.map((article, index) => <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
@@ -13,6 +17,7 @@ class ResultsList extends Component {
 
     return(
       <div>
+        {results.length > 0 && <SortFilter />}
         {results !== undefined && this.renderResults()}
       </div>
     )
