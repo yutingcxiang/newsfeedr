@@ -23,9 +23,14 @@ export function searchArticles(query) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'}, query);
     return fetch(`/api/filtered/${query}`)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error()
+        }
+          return response.json()
+      })
       .then(articles => dispatch({type: 'FETCH_FILTERED_ARTICLES', payload: articles}))
-      .catch(error => console.log(error))
+      .catch(error => dispatch({type: 'HANDLE_SEARCH_ERROR', payload: error}))
   }
 }
 
