@@ -1,4 +1,4 @@
-export default function articlesReducer(state = {loading: false, headlines: [], sources: [], sourceArticles: [], results:[]}, action) {
+export default function articlesReducer(state = {loading: false, headlines: [], sources: [], sourceArticles: [], results:[], fetchDone: false}, action) {
   switch (action.type) {
     case 'LOADING_ARTICLES':
       return {...state, loading: true}
@@ -7,7 +7,7 @@ export default function articlesReducer(state = {loading: false, headlines: [], 
       return {...state, loading: false, headlines: action.payload.articles}
 
     case 'FETCH_FILTERED_ARTICLES':
-      return {...state, loading: false, results: action.payload.articles}
+      return {...state, loading: false, results: action.payload.articles, fetchDone: true}
 
     case 'FETCH_SOURCE_ARTICLES':
       return {...state, loading: false, sourceArticles: action.payload.articles}
@@ -16,7 +16,7 @@ export default function articlesReducer(state = {loading: false, headlines: [], 
       return {...state, loading: false, sources: action.payload.sources}
 
     case 'HANDLE_SEARCH_ERROR':
-      return {...state, loading: false, results: []}
+      return {...state, loading: false, results: [], fetchDone: true}
 
     default:
       return state;
