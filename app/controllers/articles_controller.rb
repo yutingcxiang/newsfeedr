@@ -40,7 +40,6 @@ class ArticlesController < ApplicationController
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
       req.params['sources'] = params["source"]
-      req.params['sortBy'] = 'publishedAt'
       req.params['pageSize'] = 100
       req.params['page'] = 1
     end
