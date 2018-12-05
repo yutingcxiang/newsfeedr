@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   def sources
     response = Faraday.get 'https://newsapi.org/v2/sources?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
+      req.params['country'] = 'us'
     end
     @sources = JSON.parse(response.body)
     render json: @sources, status: 200
@@ -27,6 +28,7 @@ class ArticlesController < ApplicationController
       req.params['apiKey'] = ENV['API_KEY']
       req.params['q'] = params["query"]
       req.params['sortBy'] = 'relevancy'
+      req.params['language'] = 'en'
       req.params['pageSize'] = 100
       req.params['page'] = 1
     end
@@ -38,6 +40,7 @@ class ArticlesController < ApplicationController
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
       req.params['sources'] = params["source"]
+      req.params['sortBy'] = 'publishedAt'
       req.params['pageSize'] = 100
       req.params['page'] = 1
     end
