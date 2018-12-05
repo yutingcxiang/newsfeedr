@@ -4,16 +4,39 @@ import { searchSourceArticles } from '../actions/articleActions';
 import ArticlesList from '../components/articles/ArticlesList';
 
 class SourceArticlesContainer extends Component {
+  state = {
+    page: 1
+  }
 
   componentDidMount() {
-    this.props.searchSourceArticles(this.props.match.params.id, 1)
+    this.props.searchSourceArticles(this.props.match.params.id, this.state.page)
+  }
+
+  nextPage = () => {
+    this.setState(prevState => {
+      return {page: prevState.page + 1}
+    }, () => {
+        this.props.searchSourceArticles(this.props.match.params.id, this.state.page)
+    })
+  }
+
+  previousPage = () => {
+    if (this.state.page > 1) {
+    this.setState(prevState => {
+      return {page: prevState.page - 1}
+    }, () => {
+      this.props.searchSourceArticles(this.props.match.params.id, this.state.page)
+    })
+    }
   }
 
   render(){
-
     return(
       <div>
         <h2>{this.props.location.state.name}</h2>
+        <button onClick={this.previousPage}>Previous</button>
+        <label>{this.state.page}</label>
+        <button onClick={this.nextPage}>Next</button>
         <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
       </div>
     )
@@ -27,7 +50,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchSourceArticles: (source) => dispatch(searchSourceArticles(source, 1))
+    searchSourceArticles: (source, page) => dispatch(searchSourceArticles(source, page))
   }
 }
 

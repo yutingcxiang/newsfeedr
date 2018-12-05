@@ -14,11 +14,9 @@ class ResultsList extends Component {
   }
 
   render() {
-    const results = this.props.results
-
     return(
       <div>
-        {results.length > 0 && <SortFilter />}
+        {this.props.results.length > 0 && <SortFilter />}
         {this.renderResults()}
       </div>
     )
