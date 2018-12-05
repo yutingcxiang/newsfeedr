@@ -25,7 +25,9 @@ class ArticlesList extends Component {
         return {page: prevState.page - 1}
       }
     })
-    this.props.searchSourceArticles(this.props.source, this.state.page)
+    if (this.state.page > 1) {
+      this.props.searchSourceArticles(this.props.source, this.state.page)
+    }
   }
 
   render() {
