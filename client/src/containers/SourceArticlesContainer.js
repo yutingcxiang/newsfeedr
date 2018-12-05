@@ -6,7 +6,7 @@ import ArticlesList from '../components/articles/ArticlesList';
 class SourceArticlesContainer extends Component {
 
   componentDidMount() {
-    this.props.searchSourceArticles(this.props.match.params.id)
+    this.props.searchSourceArticles(this.props.match.params.id, 1)
   }
 
   render(){
@@ -14,7 +14,7 @@ class SourceArticlesContainer extends Component {
     return(
       <div>
         <h2>{this.props.location.state.name}</h2>
-        <ArticlesList sourceArticles={this.props.sourceArticles}/>
+        <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
       </div>
     )
   }
@@ -27,7 +27,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchSourceArticles: (source) => dispatch(searchSourceArticles(source))
+    searchSourceArticles: (source) => dispatch(searchSourceArticles(source, 1))
   }
 }
 

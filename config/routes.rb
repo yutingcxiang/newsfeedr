@@ -5,6 +5,6 @@ Rails.application.routes.draw do
       get '/top_headlines', to: 'articles#top_headlines'
       get '/sources', to: 'articles#sources'
       get '/filtered/:query', to: 'articles#filtered_news'
-      get '/sources/:source/', to: 'articles#source_articles'
+      get '/sources/:source/:page', to: 'articles#source_articles'
   end
 end

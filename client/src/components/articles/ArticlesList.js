@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import { connect } from 'react-redux';
-import SortFilter from '../filters/SortFilter';
+import { searchSourceArticles } from '../../actions/articleActions';
 
 class ArticlesList extends Component {
   state = {
@@ -16,6 +16,7 @@ class ArticlesList extends Component {
     this.setState(prevState => {
       return {page: prevState.page + 1}
     })
+    this.props.searchSourceArticles(this.props.source, this.state.page)
   }
 
   previousPage = () => {
@@ -24,6 +25,7 @@ class ArticlesList extends Component {
         return {page: prevState.page - 1}
       }
     })
+    this.props.searchSourceArticles(this.props.source, this.state.page)
   }
 
   render() {
@@ -42,4 +44,10 @@ const mapStateToProps = state => {
   return {results: state.articles.sourceArticles}
 }
 
-export default connect(mapStateToProps)(ArticlesList);
+const mapDispatchToProps = dispatch => {
+  return {
+    searchSourceArticles: (source, page) => dispatch(searchSourceArticles(source, page))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesList);

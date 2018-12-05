@@ -21,7 +21,7 @@ export function fetchSources() {
 //Fetch all articles relevant to search query
 export function searchArticles(query) {
   return (dispatch) => {
-    dispatch({type: 'LOADING_ARTICLES'}, query);
+    dispatch({type: 'LOADING_ARTICLES'});
     return fetch(`/api/filtered/${query}`)
       .then(response => {
         if (!response.ok) {
@@ -36,10 +36,10 @@ export function searchArticles(query) {
 
 
 //Fetch all articles relevant to search query
-export function searchSourceArticles(source) {
+export function searchSourceArticles(source, page) {
   return (dispatch) => {
-    dispatch({type: 'LOADING_ARTICLES'}, source);
-    return fetch(`/api/sources/${source}`)
+    dispatch({type: 'LOADING_ARTICLES'});
+    return fetch(`/api/sources/${source}/${page}`)
       .then(response => response.json())
       .then(articles => dispatch({type: 'FETCH_SOURCE_ARTICLES', payload: articles}))
   }

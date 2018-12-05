@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
 
   #Default page set to show top 20 news articles from the US.
-  def top_headlines(country="us")
+  def top_headlines
     response = Faraday.get 'https://newsapi.org/v2/top-headlines?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
-      req.params['country'] = country
+      req.params['country'] = 'us'
       req.params['pageSize'] = 100
       req.params['page'] = 1
     end
@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
       req.params['apiKey'] = ENV['API_KEY']
       req.params['sources'] = params["source"]
       req.params['pageSize'] = 100
-      req.params['page'] = 1
+      req.params['page'] = params["page"]
     end
     @source_articles = JSON.parse(response.body)
     render json: @source_articles, status: 200

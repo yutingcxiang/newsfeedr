@@ -5,7 +5,7 @@ import { fetchHeadlines } from '../actions/articleActions';
 
 class HeadlinesContainer extends Component {
   componentDidMount() {
-    this.props.fetchHeadlines("us")
+    this.props.fetchHeadlines()
     this.interval = setInterval(() =>
       this.props.fetchHeadlines("us"), 600000)
   }
