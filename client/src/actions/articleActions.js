@@ -19,11 +19,11 @@ export function fetchSources() {
 }
 
 //Fetch all articles relevant to search query
-export function searchArticles(query) {
+export function searchArticles(query, page) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'});
     dispatch({type: 'SAVE_SEARCH_QUERY', payload: query})
-    return fetch(`/api/filtered/${query}`)
+    return fetch(`/api/filtered/${query}/${page}`)
       .then(response => {
         if (!response.ok) {
           throw new Error()

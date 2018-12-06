@@ -4,7 +4,8 @@ import { searchArticles } from '../../actions/articleActions';
 
 class SearchInput extends Component {
   state = {
-    text: ''
+    text: '',
+    page: 1
   }
 
   handleChange = event => {
@@ -15,7 +16,7 @@ class SearchInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.searchArticles(this.state.text)
+    this.props.searchArticles(this.state.text, this.state.page)
     this.setState({
       text: ''
     })
@@ -40,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchArticles: (query) => dispatch(searchArticles(query))
+    searchArticles: (query, page) => dispatch(searchArticles(query, page))
   }
 }
 

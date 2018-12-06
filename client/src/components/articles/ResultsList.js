@@ -13,7 +13,7 @@ class ResultsList extends Component {
     this.setState(prevState => {
       return {page: prevState.page + 1}
     }, () => {
-        this.props.searchSourceArticles(this.props.query, this.state.page)
+        this.props.searchArticles(this.props.query, this.state.page)
     })
   }
 
@@ -22,7 +22,7 @@ class ResultsList extends Component {
     this.setState(prevState => {
       return {page: prevState.page - 1}
     }, () => {
-      this.props.searchSourceArticles(this.props.query, this.state.page)
+      this.props.searchArticles(this.props.query, this.state.page)
     })
     }
   }
@@ -48,7 +48,8 @@ class ResultsList extends Component {
 }
 
 const mapStateToProps = state => {
-  return {results: state.articles.results,
+  return {
+    results: state.articles.results,
     fetchDone: state.articles.fetchDone,
     query: state.articles.query
   }
