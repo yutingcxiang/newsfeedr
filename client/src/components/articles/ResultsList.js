@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import { connect } from 'react-redux';
-import SortFilter from '../filters/SortFilter';
 import { searchArticles } from '../../actions/articleActions';
 
 class ResultsList extends Component {
