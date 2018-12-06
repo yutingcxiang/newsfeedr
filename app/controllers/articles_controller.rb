@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
       req.params['sortBy'] = 'relevancy'
       req.params['language'] = 'en'
       req.params['pageSize'] = 100
-      req.params['page'] = 1
+      req.params['page'] = params["page"]
     end
     @query_articles = JSON.parse(response.body)
     render json: @query_articles, status: 200

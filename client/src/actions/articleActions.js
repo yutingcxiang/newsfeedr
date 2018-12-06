@@ -22,6 +22,7 @@ export function fetchSources() {
 export function searchArticles(query) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'});
+    dispatch({type: 'SAVE_SEARCH_QUERY', payload: query})
     return fetch(`/api/filtered/${query}`)
       .then(response => {
         if (!response.ok) {
