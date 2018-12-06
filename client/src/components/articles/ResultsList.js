@@ -36,12 +36,18 @@ class ResultsList extends Component {
   }
 
   render() {
-    return(
-      <div>
+    if (this.props.results.length > 0){
+      return(<div>
         <button onClick={this.previousPage}>Previous</button>
         <label>{this.state.page}</label>
         <button onClick={this.nextPage}>Next</button>
         {this.renderResults()}
+      </div>
+    )
+  }
+
+    return(
+      <div>
       </div>
     )
   }
