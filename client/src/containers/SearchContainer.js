@@ -41,9 +41,14 @@ class SearchContainer extends Component {
 
     return(
       <div>
-        <SearchInput searchArticles={this.props.searchArticles}/>
+        <div id="search">
+          <SearchInput searchArticles={this.props.searchArticles}/>
+        </div>
+
         {pagination}
+        <div class="ui section divider"></div>
         <ResultsList results={this.props.results} fetchDone={this.props.fetchDone}/>
+        <div class="ui section divider"></div>
       </div>
     )
   }

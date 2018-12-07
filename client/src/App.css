@@ -1,5 +1,5 @@
-.App {
-  /* text-align: center; */
+.App, #description {
+  margin: 20px;
 }
 
 .App-footer{
@@ -21,4 +21,8 @@
 
 #attribution-link, #title, #headlines-link, #sources-link, #search-link {
   color: white
+}
+
+#search {
+  text-align: center;
 }
