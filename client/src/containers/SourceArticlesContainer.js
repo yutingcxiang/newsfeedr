@@ -34,24 +34,24 @@ class SourceArticlesContainer extends Component {
     return(
       <div>
         <div id="source-name">
-          <div class="ui blue label">
+          <div className="ui blue label">
             <h3>{this.props.location.state.name}</h3>
           </div>
         </div>
 
-        <div class="ui section divider"></div>
+        <div className="ui section divider"></div>
         <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
 
-        <button class="ui labeled icon button" onClick={this.previousPage}>
-          <i class="left arrow icon"></i>
+        <button className="ui labeled icon button" onClick={this.previousPage}>
+          <i className="left arrow icon"></i>
           Previous
         </button>
-        <label class="ui circular large label">{this.state.page}</label>
-        <button class="ui right labeled icon button" onClick={this.nextPage}>
-          <i class="right arrow icon"></i>
+        <label className="ui circular large label">{this.state.page}</label>
+        <button className="ui right labeled icon button" onClick={this.nextPage}>
+          <i className="right arrow icon"></i>
           Next
         </button>
-        <div class="ui section divider"></div>
+        <div className="ui section divider"></div>
       </div>
     )
   }

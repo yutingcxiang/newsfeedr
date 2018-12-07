@@ -33,13 +33,13 @@ class SearchContainer extends Component {
     if (this.props.results.length > 0){
       pagination = (
       <div>
-        <button class="ui labeled icon button" onClick={this.previousPage}>
-          <i class="left arrow icon"></i>
+        <button className="ui labeled icon button" onClick={this.previousPage}>
+          <i className="left arrow icon"></i>
           Previous
         </button>
-        <label class="ui circular large label">{this.state.page}</label>
-        <button class="ui right labeled icon button" onClick={this.nextPage}>
-          <i class="right arrow icon"></i>
+        <label className="ui circular large label">{this.state.page}</label>
+        <button className="ui right labeled icon button" onClick={this.nextPage}>
+          <i className="right arrow icon"></i>
           Next
         </button>
       </div>
@@ -48,11 +48,11 @@ class SearchContainer extends Component {
 
     return(
       <div>
-        <div class="ui section divider"></div>
+        <div className="ui section divider"></div>
         <div id="search">
           <SearchInput searchArticles={this.props.searchArticles}/>
         </div>
-        <div class="ui section divider"></div>
+        <div className="ui section divider"></div>
         <ResultsList results={this.props.results} fetchDone={this.props.fetchDone}/>
         {pagination}
         <br></br>
