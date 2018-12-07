@@ -19,6 +19,7 @@ class SourceArticlesContainer extends Component {
     }, () => {
         this.props.searchSourceArticles(this.props.match.params.id, this.state.page)
     })
+    window.scrollTo(0, 0)
   }
 
   previousPage = () => {
@@ -29,6 +30,7 @@ class SourceArticlesContainer extends Component {
       this.props.searchSourceArticles(this.props.match.params.id, this.state.page)
     })
     }
+    window.scrollTo(0, 0)
   }
 
   render(){

@@ -15,6 +15,7 @@ class SearchContainer extends Component {
     }, () => {
         this.props.searchArticles(this.props.query, this.state.page)
     })
+    window.scrollTo(0, 0)
   }
 
   previousPage = () => {
@@ -25,6 +26,7 @@ class SearchContainer extends Component {
       this.props.searchArticles(this.props.query, this.state.page)
     })
     }
+    window.scrollTo(0, 0)
   }
 
   render() {
