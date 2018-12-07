@@ -24,7 +24,7 @@ Install dependencies and start server:
    rake start
    ```
 
-Enter the url in your browser:
+Navigate to the url in your browser:
 
    ```
    http://localhost:3000/
