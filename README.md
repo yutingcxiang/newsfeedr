@@ -12,7 +12,7 @@ Fork and clone this repo.
 
 Update :
 
-   $ bundle install
+   ```$ bundle install```
 
 Set up the database:
 
