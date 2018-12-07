@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 
 class SearchContainer extends Component {
-  state = {
-    page: 1
+  constructor(props){
+    super(props);
+    this.state = {
+      page: 1
+    }
   }
 
   nextPage = () => {
@@ -48,11 +51,13 @@ class SearchContainer extends Component {
       )
     }
 
+    const uuidv4 = require('uuid/v4');
+
     return(
       <div>
         <div className="ui section divider"></div>
         <div id="search">
-          <SearchInput searchArticles={this.props.searchArticles}/>
+          <SearchInput searchArticles={this.props.searchArticles} key={uuidv4()}/>
         </div>
         <div className="ui section divider"></div>
         <ResultsList results={this.props.results} fetchDone={this.props.fetchDone}/>
