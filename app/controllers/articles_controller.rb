@@ -41,6 +41,7 @@ class ArticlesController < ApplicationController
       req.params['apiKey'] = ENV['API_KEY']
       req.params['sources'] = params["source"]
       req.params['pageSize'] = 100
+      req.params['language'] = 'en'
       req.params['page'] = params["page"]
     end
     @source_articles = JSON.parse(response.body)
