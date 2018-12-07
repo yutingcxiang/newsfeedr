@@ -33,11 +33,15 @@ class SourceArticlesContainer extends Component {
   render(){
     return(
       <div>
-        <h3>{this.props.location.state.name}</h3>
+        <div class="ui blue label"><h3>{this.props.location.state.name}</h3></div>
+        <div class="ui section divider"></div>
+        <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
+        <div class="ui section divider"></div>
+
         <button onClick={this.previousPage}>Previous</button>
         <label>{this.state.page}</label>
         <button onClick={this.nextPage}>Next</button>
-        <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
+        <div class="ui section divider"></div>
       </div>
     )
   }
