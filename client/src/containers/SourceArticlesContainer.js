@@ -33,7 +33,7 @@ class SourceArticlesContainer extends Component {
   render(){
     return(
       <div>
-        <h2>{this.props.location.state.name}</h2>
+        <h3>{this.props.location.state.name}</h3>
         <button onClick={this.previousPage}>Previous</button>
         <label>{this.state.page}</label>
         <button onClick={this.nextPage}>Next</button>
