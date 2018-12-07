@@ -35,9 +35,11 @@ class SearchInput extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Looking for something specific?</label><br />
-          <input type="text" placeholder="Search news..." value={this.state.text} onChange={this.handleChange}/>
-          <input type="submit" />
+          <h3 class="ui medium header">Looking for something specific?</h3>
+          <div class="ui action input">
+            <input type="text" placeholder="Search news..." value={this.state.text} onChange={this.handleChange}/>
+            <button class="ui button" type="submit">Submit</button>
+          </div>
         </form>
       </div>
     )
