@@ -5,8 +5,8 @@ class Source extends Component {
 
   render() {
     return(
-      <div>
-        <h3><Link to={{
+      <div class="item">
+        <h3 class="header"><Link to={{
           pathname: `/sources/${this.props.id}`,
           state: {
             name: this.props.name }

@@ -9,11 +9,13 @@ const Navbar = () => {
   return(
     <Router>
       <div>
-        <div class="ui tabular menu">
-          <Link to="/" class="item"> Recent Headlines </Link>
-          <Link to="/sources" class="item"> Browse Stories </Link>
-          <Link to="/search" class="item"> Search News </Link>
-          <h1 class="ui header floated right item">NewsFeedr</h1>
+        <div class="App-menu">
+          <div class="ui tabular menu">
+            <Link to="/" id="headlines-link" class="item"> Recent Headlines </Link>
+            <Link to="/sources" id="sources-link" class="item"> Browse Stories </Link>
+            <Link to="/search" id="search-link" class="item"> Search News </Link>
+            <h1 id="title" class="ui header floated right item">NewsFeedr</h1>
+          </div>
         </div>
         <div class="ui hidden divider"></div>
         <Route exact path="/" component={HeadlinesContainer} />

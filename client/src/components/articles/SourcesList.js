@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 class SourcesList extends Component {
 
   renderSources = () => {
-   return (this.props.sources.map((source, index) => <Source key={index} id={source.id} name={source.name} description={source.description} url={source.url} category={source.category} />))
+    return (this.props.sources.map((source, index) => <Source key={index} id={source.id} name={source.name} description={source.description} url={source.url} category={source.category} />))
   }
 
 
   render() {
     return(
-      <div>
+      <div class="ui list">
         {this.renderSources()}
       </div>
     )
