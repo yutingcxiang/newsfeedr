@@ -1,24 +1,41 @@
-# README
+# NewsFeedr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A newsfeed application for keeping up to date on the latest news. View the most recent headlines (updated every 10 minutes), browse articles from various sources (including The New York Times, TechCrunch, and more), or search all available articles.
 
-Things you may want to cover:
+Built with [News Api](https://newsapi.org/).
 
-* Ruby version
+* Demo
 
-* System dependencies
+* Installation
 
-* Configuration
+Fork and clone this repo.
 
-* Database creation
+Navigate to its location:
 
-* Database initialization
+   $ cd newsfeedr
 
-* How to run the test suite
+Update gems:
 
-* Services (job queues, cache servers, search engines, etc.)
+   $ bundle install
 
-* Deployment instructions
+Set up the database:
 
-* ...
+   $ rake db:migrate
+
+Seed the database:
+
+   $ rake db:seed
+
+Boot up the server:
+
+   $ rails s
+
+Enter the url in your browser:
+
+   $ http://localhost:3000/
+
+* Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/yutingcxiang/newsfeedr. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+* License
+This application is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
