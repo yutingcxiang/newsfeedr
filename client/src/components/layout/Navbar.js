@@ -17,6 +17,7 @@ const Navbar = () => {
         <Route exact path="/sources" component={SourcesContainer} />
         <Route exact path="/search" component={SearchContainer} />
         <Route path="/sources/:id" component={SourceArticlesContainer}/>
+        <Route path="/search/:query" component={SearchContainer}/>
       </div>
     </Router>
   )

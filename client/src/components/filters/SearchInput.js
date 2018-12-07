@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchArticles } from '../../actions/articleActions';
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 
 class SearchInput extends Component {
   state = {
     text: '',
-    page: 1
+    page: 1,
+    redirect: false
   }
 
   handleChange = event => {
@@ -18,11 +20,18 @@ class SearchInput extends Component {
     event.preventDefault()
     this.props.searchArticles(this.state.text, this.state.page)
     this.setState({
-      text: ''
+      page: 1,
+      redirect: true
     })
   }
 
   render() {
+    if (this.state.redirect) {
+      return (
+        <Redirect to={`/search/${this.state.text}`} />
+      )
+    }
+
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
