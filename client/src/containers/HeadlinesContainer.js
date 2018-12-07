@@ -5,6 +5,7 @@ import { fetchHeadlines } from '../actions/articleActions';
 
 class HeadlinesContainer extends Component {
   componentDidMount() {
+    window.scrollTo(0, 0)
     this.props.fetchHeadlines()
     this.interval = setInterval(() =>
       this.props.fetchHeadlines("us"), 600000)

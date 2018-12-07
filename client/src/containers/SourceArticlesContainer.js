@@ -9,6 +9,7 @@ class SourceArticlesContainer extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
     this.props.searchSourceArticles(this.props.match.params.id, this.state.page)
   }
 
