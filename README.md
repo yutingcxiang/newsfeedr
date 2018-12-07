@@ -8,27 +8,27 @@ Built with [News Api](https://newsapi.org/).
 
 ## Installation
 
-Fork and clone this repo.
+Fork and clone this repo:
 
-Update :
+   ```
+   git clone git@github.com:yutingcxiang/newsfeedr.git
+   ```
+   
+Install dependencies and start server:
 
-   $ bundle install
+   ```
+   cd newsfeedr
+   bundle install
+   cd client
+   npm install
+   rake start
+   ```
 
-Set up the database:
+Navigate to the url in your browser:
 
-   $ rake db:migrate
-
-Seed the database:
-
-   $ rake db:seed
-
-Boot up the server:
-
-   $ rails s
-
-Enter the url in your browser:
-
-   $ http://localhost:3000/
+   ```
+   http://localhost:3000/
+   ```
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/yutingcxiang/newsfeedr. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
