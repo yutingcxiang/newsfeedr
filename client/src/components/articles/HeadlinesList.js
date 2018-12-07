@@ -10,7 +10,7 @@ class HeadlinesList extends Component {
 
   render() {
     return(
-      <div>
+      <div id="headlines-list">
         {this.renderHeadlines()}
       </div>
     )

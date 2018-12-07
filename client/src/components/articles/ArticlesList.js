@@ -9,7 +9,7 @@ class ArticlesList extends Component {
 
   render() {
     return(
-      <div>
+      <div id="articles-list">
         {this.renderArticles()}
       </div>
     )

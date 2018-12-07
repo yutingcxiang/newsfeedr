@@ -33,7 +33,12 @@ class SourceArticlesContainer extends Component {
   render(){
     return(
       <div>
-        <div class="ui blue label"><h3>{this.props.location.state.name}</h3></div>
+        <div id="source-name">
+          <div class="ui blue label">
+            <h3>{this.props.location.state.name}</h3>
+          </div>
+        </div>
+
         <div class="ui section divider"></div>
         <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
         <div class="ui section divider"></div>

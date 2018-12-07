@@ -11,8 +11,10 @@ class SourcesList extends Component {
 
   render() {
     return(
-      <div class="ui list">
-        {this.renderSources()}
+      <div id="sources-list">
+        <div class="ui list">
+          {this.renderSources()}
+        </div>
       </div>
     )
   }

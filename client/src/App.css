@@ -1,5 +1,5 @@
 .App, #description {
-  margin: 20px;
+  margin: 10px;
 }
 
 .App-footer{
@@ -25,4 +25,14 @@
 
 #search {
   text-align: center;
+}
+
+#headlines-list, #articles-list, #results-list, #sources-list {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#source-name {
+  text-align: center;
+  width: 100%;
 }

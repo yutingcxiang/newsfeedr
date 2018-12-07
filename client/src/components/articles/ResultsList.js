@@ -13,7 +13,7 @@ class ResultsList extends Component {
 
   render() {
     return(
-      <div>
+      <div id="results-list">
         {this.renderResults()}
       </div>
     )
