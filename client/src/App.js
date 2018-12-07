@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import ScrollUpButton from './components/layout/ScrollUpButton';
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Footer />
+        <ScrollUpButton />
       </div>
     );
   }
