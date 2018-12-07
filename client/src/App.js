@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 class App extends Component {
 
@@ -8,10 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-
-        <footer className="App-footer">
-          <h5><a id="attribution-link" href='https://newsapi.org/'>© Newsfeedr - Powered by News API</a></h5>
-        </footer>
+        <Footer />
       </div>
     );
   }
