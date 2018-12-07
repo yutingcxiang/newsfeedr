@@ -31,10 +31,17 @@ class SearchContainer extends Component {
     let pagination;
 
     if (this.props.results.length > 0){
-      pagination = (<div>
-        <button onClick={this.previousPage}>Previous</button>
-        <label>{this.state.page}</label>
-        <button onClick={this.nextPage}>Next</button>
+      pagination = (
+      <div>
+        <button class="ui labeled icon button" onClick={this.previousPage}>
+          <i class="left arrow icon"></i>
+          Previous
+        </button>
+        <label class="ui circular large label">{this.state.page}</label>
+        <button class="ui right labeled icon button" onClick={this.nextPage}>
+          <i class="right arrow icon"></i>
+          Next
+        </button>
       </div>
       )
     }
