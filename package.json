@@ -1,0 +1,23 @@
+{
+  "name": "newsfeedr",
+  "version": "1.0.0",
+  "description": "A newsfeed application for keeping up to date on the latest news.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yutingcxiang/newsfeedr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yutingcxiang/newsfeedr/issues"
+  },
+  "homepage": "https://github.com/yutingcxiang/newsfeedr#readme"
+}
