@@ -11,8 +11,9 @@ Built with [News Api](https://newsapi.org/).
 
 ## Demo
 
-https://newsfeedr-app.herokuapp.com/
 ![newsfeedr](https://i.imgur.com/dZcEbl6.png)
+
+Site: https://newsfeedr-app.herokuapp.com/
 
 ## Installation
 
