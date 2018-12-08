@@ -11,6 +11,8 @@ Built with [News Api](https://newsapi.org/).
 
 ## Demo
 
+https://newsfeedr-app.herokuapp.com/
+
 ## Installation
 
 Fork and clone this repo:
