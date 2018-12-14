@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchInput from '../components/filters/SearchInput';
 import ResultsList from '../components/articles/ResultsList';
+import RecentFilters from '../components/filters/RecentFilters';
 import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 
@@ -56,6 +57,10 @@ class SearchContainer extends Component {
         <div id="search">
           <SearchInput searchArticles={this.props.searchArticles} key={uuidv4()}/>
         </div>
+        <div className="ui section divider"></div>
+
+        <RecentFilters />
+
         <div className="ui section divider"></div>
         <ResultsList results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/>
         {pagination}
