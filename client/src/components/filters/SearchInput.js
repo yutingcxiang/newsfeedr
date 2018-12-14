@@ -46,14 +46,4 @@ class SearchInput extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {articles: state.articles.results}
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    searchArticles: (query, page) => dispatch(searchArticles(query, page))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchInput);
+export default SearchInput;

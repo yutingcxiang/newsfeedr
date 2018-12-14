@@ -4,10 +4,15 @@ import ResultsList from '../components/articles/ResultsList';
 import RecentFilters from '../components/filters/RecentFilters';
 import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
+import { getRecentFilters } from '../actions/filterActions';
 
 class SearchContainer extends Component {
   state = {
       page: 1
+  }
+
+  componentDidMount(){
+    this.props.getRecentFilters()
   }
 
   nextPage = () => {
@@ -59,7 +64,7 @@ class SearchContainer extends Component {
         </div>
         <div className="ui section divider"></div>
 
-        <RecentFilters searchFilter={this.props.searchArticles}/>
+        <RecentFilters filters={this.props.filters} searchFilter={this.props.searchArticles}/>
 
         <div className="ui section divider"></div>
         <ResultsList results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/>
@@ -75,13 +80,15 @@ const mapStateToProps = state => {
     results: state.articles.results,
     query: state.articles.query,
     numResults: state.articles.numResults,
-    searchDone: state.articles.searchDone
+    searchDone: state.articles.searchDone,
+    filters: state.filters.filters
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchArticles: (query, page) => dispatch(searchArticles(query, page))
+    searchArticles: (query, page) => dispatch(searchArticles(query, page)),
+    getRecentFilters: () => dispatch(getRecentFilters())
   }
 }
 

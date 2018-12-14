@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Filter extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Filter = (props) => {
 
-  handleClick = () => {
-    console.log(this.props.query)
-  }
-
-  render() {
-    return(
-      <React.Fragment>
-        <p className="ui blue tag label" onClick={this.handleClick}>{this.props.query}</p>
-      </React.Fragment>
-    )
-  }
+  return(
+    <React.Fragment>
+      <p className="ui label">{props.query}</p>
+    </React.Fragment>
+  )
 }
 
 export default Filter;

@@ -11,13 +11,14 @@ const ResultsList = (props) => {
 
   const renderNumResults = () => {
     if (props.searchDone) {
-      return(<p>{props.numResults || 0} results found.</p>)
+      return(<p><strong>{props.numResults || 0} results found.</strong></p>)
     }
   }
 
   return(
     <div id="results-list">
       {renderNumResults()}
+      <br></br>
       {renderResults()}
     </div>
   )
