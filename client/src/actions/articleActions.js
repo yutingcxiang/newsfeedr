@@ -23,7 +23,14 @@ export function searchArticles(query, page) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'});
     dispatch({type: 'SAVE_SEARCH_QUERY', payload: query})
-    return fetch(`/api/filtered/${query}/${page}`)
+    return fetch(`/api/news_filters/`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({query: {query: query, page: page}})
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error()

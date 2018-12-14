@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :articles
       get '/top_headlines', to: 'articles#top_headlines'
       get '/sources', to: 'articles#sources'
-      get '/filtered/:query/:page', to: 'articles#filtered_news'
+      post '/news_filters/', to: 'articles#news_filters'
       get '/sources/:source/:page', to: 'articles#source_articles'
   end
 end
