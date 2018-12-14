@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchSourceArticles } from '../actions/articleActions';
 import ArticlesList from '../components/articles/ArticlesList';
+import Pagination from '../components/layout/Pagination';
 
 class SourceArticlesContainer extends Component {
   state = {
@@ -45,15 +46,7 @@ class SourceArticlesContainer extends Component {
         <div className="ui section divider"></div>
         <ArticlesList articles={this.props.sourceArticles} source={this.props.match.params.id}/>
 
-        <button className="ui labeled icon button" onClick={this.previousPage}>
-          <i className="left arrow icon"></i>
-          Previous
-        </button>
-        <label className="ui circular large label">{this.state.page}</label>
-        <button className="ui right labeled icon button" onClick={this.nextPage}>
-          <i className="right arrow icon"></i>
-          Next
-        </button>
+        {<Pagination page={this.state.page} previousPage={this.previousPage} nextPage={this.nextPage}/>}
         <div className="ui section divider"></div>
       </div>
     )
