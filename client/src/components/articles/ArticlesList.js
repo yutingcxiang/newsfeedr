@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Article from './Article';
 
-class ArticlesList extends Component {
+const ArticlesList =(props) => {
 
-  renderArticles = () => {
-    return (this.props.articles.map((article, index) => <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
+  const renderArticles = () => {
+    return (props.articles.map((article, index) => <Article key={index} publishedAt={article.publishedAt} description={article.description} title={article.title} url={article.url} /> ))
   }
 
-  render() {
-    return(
-      <div id="articles-list">
-        {this.renderArticles()}
-      </div>
-    )
-  }
+  return(
+    <div id="articles-list">
+      {renderArticles()}
+    </div>
+  )
 }
 
 export default ArticlesList;
