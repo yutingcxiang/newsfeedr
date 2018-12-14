@@ -59,7 +59,7 @@ class SearchContainer extends Component {
         </div>
         <div className="ui section divider"></div>
 
-        <RecentFilters />
+        <RecentFilters searchFilter={this.props.searchArticles}/>
 
         <div className="ui section divider"></div>
         <ResultsList results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/>

@@ -9,7 +9,7 @@ class RecentFilters extends Component {
   }
 
   renderFilters = () => {
-    return (this.props.filters.map((filter, index) => <Filter key={index} query={filter.query} /> ))
+    return (this.props.filters.map((filter, index) => <Filter key={index} query={filter.query} searchFilter={this.props.searchArticles}/> ))
   }
 
   render() {

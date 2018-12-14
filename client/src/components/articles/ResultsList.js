@@ -1,6 +1,5 @@
 import React from 'react';
 import Article from './Article';
-import SearchInput from '../filters/SearchInput';
 
 const ResultsList = (props) => {
 

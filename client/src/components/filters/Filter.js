@@ -1,12 +1,21 @@
-import React from 'react';
-import Moment from 'react-moment';
+import React, { Component } from 'react';
 
-const Filter = (props) => {
-  return(
-    <React.Fragment>
-      <a class="ui tag label">{props.query}</a>
-    </React.Fragment>
-  )
+class Filter extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleClick = () => {
+    console.log(this.props.query)
+  }
+
+  render() {
+    return(
+      <React.Fragment>
+        <p className="ui blue tag label" onClick={this.handleClick}>{this.props.query}</p>
+      </React.Fragment>
+    )
+  }
 }
 
 export default Filter;

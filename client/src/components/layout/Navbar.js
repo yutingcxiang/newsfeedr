@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HeadlinesContainer from '../../containers/HeadlinesContainer';
 import SourcesContainer from '../../containers/SourcesContainer';
 import SearchContainer from '../../containers/SearchContainer';
 import SourceArticlesContainer from '../../containers/SourceArticlesContainer';
 
 const Navbar = () => {
-  const uuidv4 = require('uuid/v4');
+  // const uuidv4 = require('uuid/v4');
 
   return(
     <Router>
