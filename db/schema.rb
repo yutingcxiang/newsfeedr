@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2018_12_14_183057) do
   end
 
   create_table "filters", force: :cascade do |t|
+    t.string "query"
+    t.integer "page"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

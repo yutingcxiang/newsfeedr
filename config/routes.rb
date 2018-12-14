@@ -8,5 +8,6 @@ Rails.application.routes.draw do
       get '/sources', to: 'articles#sources'
       post '/news_filters/', to: 'articles#news_filters'
       get '/sources/:source/:page', to: 'articles#source_articles'
+      get '/filters', to: 'filter#recent'
   end
 end

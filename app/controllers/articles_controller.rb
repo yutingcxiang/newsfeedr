@@ -24,13 +24,15 @@ class ArticlesController < ApplicationController
 
   # Search all news based on user query.
   def news_filters
+    @filter = Filter.create(article_params)
+
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
-      req.params['q'] = params[:query][:query]
+      req.params['q'] = params[:article][:query]
       req.params['sortBy'] = 'relevancy'
       req.params['language'] = 'en'
       req.params['pageSize'] = 100
-      req.params['page'] = params[:query][:page]
+      req.params['page'] = params[:article][:page]
     end
     @query_articles = JSON.parse(response.body)
     render json: @query_articles, status: 200
@@ -39,10 +41,10 @@ class ArticlesController < ApplicationController
   def source_articles
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['API_KEY']
-      req.params['sources'] = query_params[:source]
+      req.params['sources'] = params[:source]
       req.params['pageSize'] = 100
       req.params['language'] = 'en'
-      req.params['page'] = query_params[:page]
+      req.params['page'] = params[:page]
     end
     @source_articles = JSON.parse(response.body)
     render json: @source_articles, status: 200
@@ -50,7 +52,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  def query_params
-    params.require(:query).permit(:query, :page)
+  def article_params
+    params.require(:article).permit(:query, :page)
   end
 end

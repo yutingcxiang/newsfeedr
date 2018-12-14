@@ -21,7 +21,7 @@ export function fetchSources() {
 //Fetch all articles relevant to search query
 export function searchArticles(query, page) {
   return (dispatch) => {
-    dispatch({type: 'LOADING_ARTICLES'});
+    // dispatch({type: 'LOADING_ARTICLES'});
     dispatch({type: 'SAVE_SEARCH_QUERY', payload: query})
     return fetch(`/api/news_filters/`, {
         method: 'POST',
@@ -29,7 +29,7 @@ export function searchArticles(query, page) {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({query: {query: query, page: page}})
+        body: JSON.stringify({article: {query: query, page: page}})
     })
       .then(response => {
         if (!response.ok) {
