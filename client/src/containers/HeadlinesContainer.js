@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadlinesList from '../components/articles/HeadlinesList';
+import ArticlesList from '../components/articles/ArticlesList';
 import { connect } from 'react-redux';
 import { fetchHeadlines } from '../actions/articleActions';
 
@@ -18,14 +18,14 @@ class HeadlinesContainer extends Component {
   render() {
     return(
       <div>
-        <HeadlinesList />
+        <ArticlesList articles={this.props.headlines} />
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return {articles: state.articles.articles}
+  return {headlines: state.articles.headlines}
 }
 
 const mapDispatchToProps = dispatch => {

@@ -43,7 +43,7 @@ class SourceArticlesContainer extends Component {
         </div>
 
         <div className="ui section divider"></div>
-        <ArticlesList sourceArticles={this.props.sourceArticles} source={this.props.match.params.id}/>
+        <ArticlesList articles={this.props.sourceArticles} source={this.props.match.params.id}/>
 
         <button className="ui labeled icon button" onClick={this.previousPage}>
           <i className="left arrow icon"></i>
