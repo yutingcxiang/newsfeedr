@@ -4,7 +4,7 @@ import Filter from './Filter';
 const RecentFilters = (props) => {
 
   const renderFilters = () => {
-    return (props.filters.map((filter, index) => <Filter key={index} query={filter.query}/> ))
+    return (props.filters.map((filter, index) => <Filter key={index} query={filter}/> ))
   }
 
     return(
