@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchInput from '../components/filters/SearchInput';
 import ResultsList from '../components/articles/ResultsList';
 import RecentFilters from '../components/filters/RecentFilters';
+import Pagination from '../components/layout/Pagination';
 import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 import { getRecentFilters } from '../actions/filterActions';
@@ -36,24 +37,6 @@ class SearchContainer extends Component {
   }
 
   render() {
-    let pagination;
-
-    if (this.props.results.length > 0){
-      pagination = (
-      <div>
-        <button className="ui labeled icon button" onClick={this.previousPage}>
-          <i className="left arrow icon"></i>
-          Previous
-        </button>
-        <label className="ui circular large label">{this.state.page}</label>
-        <button className="ui right labeled icon button" onClick={this.nextPage}>
-          <i className="right arrow icon"></i>
-          Next
-        </button>
-      </div>
-      )
-    }
-
     const uuidv4 = require('uuid/v4');
 
     return(
@@ -64,11 +47,12 @@ class SearchContainer extends Component {
         </div>
         <div className="ui section divider"></div>
 
-        <RecentFilters filters={this.props.filters} searchFilter={this.props.searchArticles}/>
+        <RecentFilters filters={this.props.filters}/>
 
         <div className="ui section divider"></div>
         <ResultsList results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/>
-        {pagination}
+
+        {this.props.numResults > 100 && <Pagination page={this.state.page} previousPage={this.previousPage} nextPage={this.nextPage}/>}
         <br></br>
       </div>
     )
