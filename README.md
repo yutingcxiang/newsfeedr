@@ -5,9 +5,9 @@ A newsfeed application for keeping up to date on the latest news.
 NewsFeedr offers the following:
 * Recent Headlines - View today's most recent news (updated every 10 minutes).
 * Browse Stories - Search articles from various sources (including The New York Times, TechCrunch, and more).
-* Search News - Search all available articles for something specific (try searching 'Trump').
+* Search News - Search all available articles for something specific (try searching 'google' or 'bitcoin').
 
-Built with [News Api](https://newsapi.org/).
+Built with [News API](https://newsapi.org/).
 
 ## Demo
 
