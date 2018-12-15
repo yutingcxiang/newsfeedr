@@ -6,13 +6,11 @@ import SearchContainer from '../../containers/SearchContainer';
 import SourceArticlesContainer from '../../containers/SourceArticlesContainer';
 
 const Navbar = () => {
-  // const uuidv4 = require('uuid/v4');
-
   return(
     <Router>
       <div>
         <div className="App-menu">
-          <div className="ui tabular menu">
+          <div className="ui tabular stackable menu">
             <Link to="/" id="headlines-link" className="item"> Recent Headlines </Link>
             <Link to="/sources" id="sources-link" className="item"> Browse Stories </Link>
             <Link to="/search" id="search-link" className="item"> Search News </Link>
