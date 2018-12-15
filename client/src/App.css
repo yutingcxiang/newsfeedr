@@ -34,3 +34,7 @@
   text-align: center;
   width: 100%;
 }
+
+a:visited {
+  color: grey;
+}
