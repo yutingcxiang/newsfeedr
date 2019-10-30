@@ -10,4 +10,8 @@ Rails.application.routes.draw do
       get '/sources/:source/:page', to: 'articles#source_articles'
       get '/filters', to: 'filter#recent'
   end
+
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
 end
