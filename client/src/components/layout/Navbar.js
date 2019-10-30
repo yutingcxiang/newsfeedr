@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import HeadlinesContainer from '../../containers/HeadlinesContainer';
 import SourcesContainer from '../../containers/SourcesContainer';
 import SearchContainer from '../../containers/SearchContainer';
