@@ -18,8 +18,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="ui hidden divider"></div>
-        <Route exact path="/" component={HeadlinesContainer} />
         <Route exact path="/sources" component={SourcesContainer} />
+        <Route exact path="/" component={HeadlinesContainer} />
         <Route exact path="/sources/:id" component={SourceArticlesContainer} />
         <Route exact path="/search" component={SearchContainer} />
         <Route exact path="/search/:query" component={SearchContainer} />
