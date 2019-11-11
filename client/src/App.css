@@ -37,6 +37,10 @@ a:visited {
   color: grey;
 }
 
+#recent-filters p {
+  margin: 5px;
+}
+
 @media only screen and (max-width: 767px) {
   #title {
     display: none;
