@@ -26,7 +26,6 @@ Fork and clone this repo:
 Install dependencies and start server:
 
    ```
-   cd newsfeedr
    bundle install
    cd client
    npm install
