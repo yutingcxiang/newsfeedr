@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="App-menu">
           <div className="ui tabular stackable menu">
             <Link to="/" id="headlines-link" className="item"> Recent Headlines </Link>
-            <Link to="/sources" id="sources-link" className="item"> Browse Stories </Link>
+            <Link to="/sources" id="sources-link" className="item"> Browse Sources </Link>
             <Link to="/search" id="search-link" className="item"> Search News </Link>
             <h1 id="title" className="ui header floated right item">NewsFeedr</h1>
           </div>

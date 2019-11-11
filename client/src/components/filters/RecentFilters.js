@@ -9,7 +9,7 @@ const RecentFilters = (props) => {
 
     return(
       <div id="recent-filters">
-        <p>Need ideas? Try searching these:</p>
+        <p>Here's what others are searching:</p>
         {renderFilters()}
       </div>
     )
