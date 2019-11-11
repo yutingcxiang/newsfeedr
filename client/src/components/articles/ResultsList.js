@@ -17,7 +17,7 @@ const ResultsList = (props) => {
 
   return(
     <div id="results-list">
-      {renderNumResults()}
+      {/* {renderNumResults()} */}
       <br></br>
       {renderResults()}
     </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SearchInput from '../components/filters/SearchInput';
 import ResultsList from '../components/articles/ResultsList';
 import RecentFilters from '../components/filters/RecentFilters';
-import Pagination from '../components/layout/Pagination';
+// import Pagination from '../components/layout/Pagination';
 import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 import { getRecentFilters } from '../actions/filterActions';
@@ -52,7 +52,7 @@ class SearchContainer extends Component {
         <div className="ui section divider"></div>
         <ResultsList results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/>
 
-        {this.props.numResults > 100 && <Pagination page={this.state.page} previousPage={this.previousPage} nextPage={this.nextPage}/>}
+        {/* {this.props.numResults > 100 && <Pagination page={this.state.page} previousPage={this.previousPage} nextPage={this.nextPage}/>} */}
         <br></br>
       </div>
     )

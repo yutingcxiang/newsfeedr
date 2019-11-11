@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchSourceArticles } from '../actions/articleActions';
 import ArticlesList from '../components/articles/ArticlesList';
-import Pagination from '../components/layout/Pagination';
+// import Pagination from '../components/layout/Pagination';
 
 class SourceArticlesContainer extends Component {
   state = {
@@ -46,8 +46,7 @@ class SourceArticlesContainer extends Component {
         <div className="ui section divider"></div>
         <ArticlesList articles={this.props.sourceArticles} source={this.props.match.params.id}/>
 
-        {<Pagination page={this.state.page} previousPage={this.previousPage} nextPage={this.nextPage}/>}
-        <div className="ui section divider"></div>
+        {/* {<Pagination page={this.state.page} previousPage={this.previousPage} nextPage={this.nextPage}/>} */}
       </div>
     )
   }
