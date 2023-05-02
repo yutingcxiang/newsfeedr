@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "node": "^11.3.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -36,6 +36,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "semantic-ui": "^2.4.2"
+    "semantic-ui": "^2.5.0"
   }
 }
